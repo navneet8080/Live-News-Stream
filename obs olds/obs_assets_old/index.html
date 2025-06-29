@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Hindi News</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-bar">
+    <img src="logo.png" class="logo" alt="Logo">
+    <div class="live-box">
+      <div class="red-dot"></div>
+      <span>LIVE</span>
+    </div>
+  </div>
+
+  <div class="ticker-bar">
+    <div class="ticker-content" id="scrolling-text">Loading headlines...</div>
+  </div>
+
+  <script>
+    fetch("ticker.txt")
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById("scrolling-text").innerText = text.replace(/\n/g, "  ⚫  ");
+      });
+  </script>
+</body>
+</html>

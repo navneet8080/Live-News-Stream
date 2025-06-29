@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Status Overlay</title>
+  <style>
+    :root {
+      /* === Customizable Variables === */
+      --status-font-size: 64px;
+      --status-text-color: #000;
+      --status-bg-color: rgba(255,255,255,0.9);
+      --box-padding: 20px 40px;
+      --box-border: 5px solid #000;
+      --logo-max-width: 100px;
+      --gif-max-width: 150px;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent; /* make background transparent for overlay */
+      overflow: hidden;
+    }
+    /* === Centered Status Box === */
+    .status-container {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--status-bg-color);
+      color: var(--status-text-color);
+      font-size: var(--status-font-size);
+      font-weight: bold;
+      padding: var(--box-padding);
+      border: var(--box-border);
+      border-radius: 10px;
+      text-align: center;
+      opacity: 0;              /* start hidden */
+      animation: fadeInOut 10s forwards;
+    }
+    .status-text {
+      /* This class applies the blinking effect to the text */
+      animation: flicker 0.4s infinite alternate;
+      animation-delay: 1s; /* start blinking after fade-in */
+    }
+
+    @keyframes fadeInOut {
+      0%   { opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0; }
+    }
+
+    /* === Top-Right Logo & GIF === */
+    .top-right {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-align: center;
+    }
+    .logo-box {
+      background: rgba(255,255,255,0.9);
+      padding: 10px;
+      border: 2px solid #000;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .logo-box img {
+      display: block;
+      max-width: var(--logo-max-width); /* adjust size here */
+      height: auto;
+    }
+    .live-gif img {
+      display: block;
+      max-width: var(--gif-max-width);  /* adjust size here */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Center status message -->
+  <div class="status-container">
+    <div class="status-text">Breaking News: Your status message here</div>
+  </div>
+
+  <!-- Top-right logo and GIF -->
+  <div class="top-right">
+    <div class="logo-box">
+      <!-- Replace 'logo.png' with your logo file -->
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="live-gif">
+      <!-- Replace 'live.gif' with your live GIF file -->
+      <img src="live.gif" alt="Live GIF">
+    </div>
+  </div>
+
+  <script>
+    // Example: Update the status text via JavaScript if needed:
+    // document.querySelector('.status-text').textContent = "New status update goes here";
+
+    // Optional: If you want the animation to repeat automatically every 10s, you can uncomment below.
+    /*
+    document.querySelector('.status-container').addEventListener('animationend', () => {
+      const container = document.querySelector('.status-container');
+      // reset and restart animation
+      container.style.animation = 'none';
+      void container.offsetWidth; // force reflow
+      container.style.animation = 'fadeInOut 10s forwards';
+    });
+    */
+  </script>
+</body>
+</html>

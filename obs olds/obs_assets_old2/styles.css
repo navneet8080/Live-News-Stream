@@ -1,0 +1,64 @@
+
+@font-face {
+  font-family: 'Teko';
+  src: url('fonts/Teko-Regular.ttf');
+}
+@font-face {
+  font-family: 'Laila';
+  src: url('fonts/Laila-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.status-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px 50px;
+  border-radius: 12px;
+  border: 4px solid #111;
+  max-width: 80%;
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+  font-size: 72px;
+  color: #111;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.status-text {
+  animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.logo-box img, .live-gif img {
+  max-width: 900px;  /* Doubled from 100px */
+  height: 100;
+  display: block;
+  margin: 5px auto;
+}
+
+
+.logo-box img, .live-gif img {
+  max-width: 20px;
+  height: auto;
+  display: block;
+  margin: 5px auto;
+}

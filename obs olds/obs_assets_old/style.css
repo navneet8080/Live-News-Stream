@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
+  background: linear-gradient(to bottom, #000000, #8B0000, #FF4500);
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+/* Top bar */
+.top-bar {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+}
+
+.live-box {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF0000;
+}
+
+.red-dot {
+  width: 14px;
+  height: 14px;
+  background-color: red;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* Ticker */
+.ticker-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.ticker-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-text 40s linear infinite;
+}
+
+@keyframes scroll-text {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
