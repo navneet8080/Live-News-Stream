@@ -24,17 +24,17 @@ body, html {
 
 .logo {
   position: absolute;
-  top: 30px;
-  right: 30px;
-  width: 350px;
+  top: 780px;
+  right: 575px;
+  width: 800px;
   z-index: 5;
 }
 
 .live {
   position: absolute;
-  top: 300px;
-  right: 50px;
-  width: 160px;
+  top: 25px;
+  right: 25px;
+  width: 200px;
   z-index: 3;
 }
 
@@ -52,7 +52,7 @@ body, html {
   font-size: 90px;
   color: #fce8ed;
   font-weight: bold;
-  animation: cycle 2s ease-in-out infinite;
+  animation: cycle 8s ease-in-out infinite;
   opacity: 0;
 }
 
